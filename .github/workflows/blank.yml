@@ -23,6 +23,7 @@ jobs:
     environment: Dev
     env:
       ENV_TEST_KEY: ${{ secrets.SECRET_TEST }}
+      ENV_TEST_URL: ${{ secrets.TEST_URL }}
     runs-on: ubuntu-latest
 
     # Steps represent a sequence of tasks that will be executed as part of the job
@@ -42,3 +43,4 @@ jobs:
           echo test, and deploy your project.
           echo $ENV_TEST_KEY
           echo "====="
+          curl -I $ENV_TEST_URL
